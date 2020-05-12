@@ -1,0 +1,279 @@
+/* -------------------------- 
+------ FONTS
+-------------------------- */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/Roboto-Regular.eot');
+    src: url('/fonts/Roboto/Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto/Roboto-Regular.woff') format('woff'), url('../fonts/Roboto/Roboto-Regular.woff2') format('woff2'), url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Regular.svg#svgRoboto') format('svg');
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/fonts/FontAwesome/fontawesome-webfont.eot');
+    src: url('/fonts/FontAwesome/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/FontAwesome/fontawesome-webfont.woff') format('woff'), url('../fonts/FontAwesome/fontawesome-webfont.woff2') format('woff2'), url('../fonts/FontAwesome/fontawesome-webfont.ttf') format('truetype'), url('../fonts/FontAwesome/fontawesome-webfont.svg#svgFontAwesome/fontawesome-webfont') format('svg');
+}
+
+/* -------------------------- 
+------ ICONS
+-------------------------- */
+
+.icon {
+    display: inline-block;
+    font-family: 'FontAwesome', Arial;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin-right: 4px;
+}
+
+.home:before {
+    content: '\f015';
+}
+
+.clock:before {
+    content: '\f017';
+}
+
+.edit:before {
+    content: '\f044';
+}
+
+.comment:before {
+    content: '\f086';
+}
+
+/* -------------------------- 
+------ GENERAL
+-------------------------- */
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-column-gap: 10px;
+    grid-template-areas: "header" "container" "footer";
+}
+
+.container {
+    grid-area: container;
+    display: grid;
+    justify-self: center;
+    width: 95%;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: "nav main";
+}
+
+/* -------------------------- 
+------ HEADER
+-------------------------- */
+
+header {
+    grid-area: header;
+    background-color: #007EA7;
+    color: #FFF;
+    padding: 0.5em;
+    text-align: center;
+    text-shadow: 4px 3px 3px #00171F;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* -------------------------- 
+------ MENU
+-------------------------- */
+
+nav {
+    grid-area: nav;
+    align-self: flex-start;
+    background-color: #f0f5f7;
+    border: 1px solid #c3cfd4;
+    margin: 16px 16px 0 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    border-radius: 3px;
+    background-color: #dfecf3;
+    transition: background-color .5s ease-out;
+}
+
+nav ul li:hover {
+    background-color: #bedff1;
+}
+
+nav li a {
+    display: block;
+    padding: 8px 16px;
+}
+
+/* -------------------------- 
+------ CONTENT
+-------------------------- */
+
+a {
+    color: #007EA7;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #014a7e;
+}
+
+a:active {
+    color: #00A8E8;
+}
+
+main {
+    grid-area: main;
+    background-color: #f0f5f7;
+    border: 1px solid #c3cfd4;
+    padding: 0.5em;
+    margin: 16px 0;
+}
+
+h2 {
+    color: #046484;
+    text-transform: uppercase;
+    text-decoration: underline;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+h2:hover {
+    animation: vibrating .3s linear infinite;
+}
+
+/* -------------------------- 
+------ INFORMATIONS
+-------------------------- */
+
+.hidden {
+    display: none;
+}
+
+#info {
+    padding: 12px 8px;
+    margin-top: 10px;
+    color: rgb(255, 243, 243);
+    border-radius: 10px;
+}
+
+.error {
+    background-color: rgb(255, 147, 147);
+    border: 1px solid rgb(215, 130, 130);
+}
+
+.success {
+    background-color: rgb(129, 178, 135);
+    border: 1px solid rgb(87, 120, 103);
+}
+
+/* -------------------------- 
+------ FOOTER
+-------------------------- */
+
+footer {
+    grid-area: footer;
+    background-color: #00171F;
+    color: #FFF;
+    padding: 0.5em;
+    text-align: center;
+}
+
+footer a {
+    color: #03b6f1;
+}
+
+footer a:hover {
+    color: #0384af;
+    transition: color .5s;
+}
+
+footer .group, footer .name, footer .contact {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+/* -------------------------- 
+------ EFFECTS
+-------------------------- */
+
+@keyframes vibrating {
+    10% {
+        transform: translate(2px, 0)
+    }
+    20% {
+        transform: translate(0, 0)
+    }
+    30% {
+        transform: translate(0, -2px)
+    }
+    40% {
+        transform: translate(0, 2px)
+    }
+    60% {
+        transform: translate(0, 0)
+    }
+    70% {
+        transform: translate(0px, -2px)
+    }
+    80% {
+        transform: translate(-2px, 0)
+    }
+    90% {
+        transform: translate(0, 0)
+    }
+    100% {
+        transform: translate(0, -2px)
+    }
+}
+
+/* -------------------------- 
+------ RESPONSIVE
+-------------------------- */
+
+@media screen and (max-width: 500px) {
+    /* -------------------------- 
+    ------ GENERAL
+    -------------------------- */
+    .container {
+        width: 100%;
+        grid-template-areas: "nav" "main";
+        grid-template-rows: auto 1fr;
+        grid-template-columns: auto;
+    }
+    /* -------------------------- 
+    ------ MENU
+    -------------------------- */
+    nav {
+        margin: 0;
+    }
+    nav ul li {
+        border-radius: 0;
+        text-align: center;
+        padding: 0 9px;
+    }
+    nav .material-Icons {
+        display: block;
+    }
+    nav ul {
+        flex-direction: row;
+    }
+}

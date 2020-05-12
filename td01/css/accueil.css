@@ -1,0 +1,28 @@
+.format_mangaimg {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.format_mangaimg a {
+    display: inherit;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.format_mangaimg a:last-child {
+    margin-right: 0;
+}
+
+.format_mangaimg img {
+    opacity: 0.6;
+    width: 180px;
+    border: 1px #00171F solid;
+    transition: opacity 1s ease-out;
+}
+
+.format_mangaimg img:hover {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}

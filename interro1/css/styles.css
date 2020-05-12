@@ -1,0 +1,134 @@
+/* -------------------------- 
+------ GLOBAL
+-------------------------- */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+        "nav header aside"
+        " nav article aside"
+        "footer footer footer";
+    grid-column-gap: 1em;
+}
+
+nav, header, aside, article {
+    padding: 1em;
+}
+
+/* -------------------------- 
+------ HEADER
+-------------------------- */
+
+header {
+    grid-area: header;
+    background-color: #618685;
+}
+
+header h1{
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 1px 0px 2px #000;
+    margin: 1.5rem 0;
+}
+
+/* -------------------------- 
+------ NAV
+-------------------------- */
+
+nav {
+    grid-area: nav;
+    background-color: #d5f4e6;
+    align-self: flex-start;
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li:hover {
+    list-style: none;
+    background-color: #e0c7a4;
+    text-align: center;
+    animation: vibrating .5s reverse infinite;
+}
+
+nav ul li {
+    padding: 0.5em;
+    list-style: none;
+    background-color: #e0d6c8
+}
+
+nav ul a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* -------------------------- 
+------ ARTICLE
+-------------------------- */
+
+article {
+    grid-area: article;
+    background-color: #80ced6;
+}
+
+article p, aside p {
+    text-align: justify;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #fefbd8;
+}
+
+/* -------------------------- 
+------ IMAGES
+-------------------------- */
+
+.format_img {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.format_img img {
+    width: 200px;
+    border: 2px solid transparent;
+}
+
+.format_img img:hover {
+    border: 2px solid #618685;
+}
+
+/* -------------------------- 
+------ FOOTER
+-------------------------- */
+
+footer {
+    grid-area: footer;
+    margin-top: 1em;
+    background-color: #618685;
+}
+
+footer .name {
+    font-style: italic;
+}
+
+footer .numero {
+    font-weight: bold;
+}
+
+/* -------------------------- 
+------ EFFECT
+-------------------------- */
+
+@keyframes vibrating {
+    to {
+        transform: translate(5px, 0)
+    }
+    from {
+        transform: translate(-5px, 0)
+    }
+}

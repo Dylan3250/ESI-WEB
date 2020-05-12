@@ -1,0 +1,52 @@
+code, output {
+    background-color: #3d95b3;
+    padding: 0.16em;
+    color: white;
+}
+
+output {
+    background-color: #38a175;
+    font-size: 0.9em;
+}
+
+#questions ul {
+    margin: 5px auto 10px auto;
+}
+
+#questions ul li {
+    padding: 4px 0;
+    list-style: none;
+}
+
+/* #questions ul li:hover {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#questions ul li {
+    opacity: 0;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+    animation-name: showinfo;
+    animation-duration: 2s;
+} */
+
+#questions ul li:before {
+    content: "";
+    background-color: #3d95b3;
+    padding: 3px;
+    margin-right: 3px;
+}
+
+/* -------------------------- 
+------ EFFECTS
+-------------------------- */
+
+/* @keyframes showinfo {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+} */

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TD05 - Formulaire</title>
+</head>
+
+<body>
+    <main>
+        <form action="form_answer.html">
+            <p>Qui êtes-vous ?</p>
+            <label for="etudiant">Etudiant</label>
+            <input type="radio" name="role" value="etudiant" id="etudiant" checked>
+            <label for="enseignant">Enseignant</label>
+            <input type="radio" name="role" value="enseignant" id="enseignant">
+
+            <br><label for="name">Votre nom</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Envoyer</button>
+        </form>
+    </main>
+</body>
+
+</html>

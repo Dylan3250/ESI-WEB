@@ -1,0 +1,46 @@
+.format-forms {
+    border-radius: 2px;
+    border: 1px solid #c3cfd4;
+    box-shadow: 2px 3px 2px #dfecf3;
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+    margin-bottom: 8px;
+    outline: none;
+}
+
+.format-forms:not([type="submit"]):focus {
+    box-shadow: 2px 3px 2px #d8e5d1;
+    border-color: #a1be94;
+}
+
+#format-accept {
+    width: calc(50% + 104px);
+    min-width: 300px;
+    text-align: center;
+    border: 0;
+}
+
+textarea {
+    width: calc(50% + 104px);
+    min-width: 300px;
+    resize: none;
+}
+
+input[type=text] {
+    width: 50%;
+    min-width: 300px;
+}
+
+input[type=submit] {
+    min-width: 100px;
+    background-image: linear-gradient(#f0f5f7, #e6e6e6);
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-image: linear-gradient(#f0f5f7, #d3d2d2);
+}
+
+input[type=submit]:active {
+    background-image: linear-gradient(#f0f5f7, #bbbbbb);
+}
