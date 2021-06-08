@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Casse brique - 54027</title>
+    <meta name="author" content="Dylan BRICAR 54027">
+    <meta name="description" content="Jouez au mythique jeu casse brique et
+        tentez d'être le meilleur !">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/favicon.ico">
+    <script src="js/imports/jquery.min.js"></script>
+    <script src="js/model/Const.js"></script>
+    <script src="js/model/ConstLevels.js"></script>
+    <script src="js/Main.js"></script>
+    <!-- MODEL -->
+    <script src="js/model/Player.js"></script>
+    <script src="js/model/Sprite.js"></script>
+    <script src="js/model/Brick.js"></script>
+    <script src="js/model/Dimension.js"></script>
+    <script src="js/model/Ball.js"></script>
+    <script src="js/model/Game.js"></script>
+    <script src="js/model/Movement.js"></script>
+    <script src="js/model/Paddle.js"></script>
+    <script src="js/model/Position.js"></script>
+    <!-- CONTROLLER -->
+    <script src="js/ctrl/BallCtrl.js"></script>
+    <script src="js/ctrl/GameCtrl.js"></script>
+    <script src="js/ctrl/PaddleCtrl.js"></script>
+    <!-- VIEW -->
+    <script src="js/view/View.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Casse brique !</h1>
+        <h3>WEBG2 - 54027 - Bricar Dylan</h3>
+    </header>
+
+    <main>
+        <section id="infobar">
+            <div id="life"></div>
+            <div id="level"></div>
+            <div id="score"></div>
+        </section>
+
+        <section id="scene">
+            <div id="message"></div>
+        </section>
+    </main>
+
+    <script>$(document).ready(main);</script>
+</body>
+
+</html>

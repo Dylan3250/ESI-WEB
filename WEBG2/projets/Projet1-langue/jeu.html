@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu - Plan langue</title>
+    <meta name="author" content="Dylan BRICAR 54027">
+    <meta name="description" content="Choisissez l'ordre des mots pour
+        composer correctement les phrases demandées.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/jeu.css">
+    <link rel="icon" href="img/favicon.ico">
+    <script src="js/imports/jquery.min.js"></script>
+    <script src="js/imports/data.js"></script>
+    <script src="js/jeu.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="/index.html">
+            <h1>Plan langue</h1>
+            <h3>WEBG2 - Projet n°1</h3>
+        </a>
+    </header>
+
+    <main>
+        <section>
+            <h2>Quiz sur le thème : <span id="description"></span></h2>
+
+            <p>Question n°<span id="number"></span> :</p>
+
+            <div id="game">
+                <h3 id="question"></h3>
+                
+                <div id="answer"></div>
+                <div id="end"></div>
+                <div id="alert"></div>
+
+                <p>Cliquez sur un mot pour le placer dans la réponse (à la 
+                    suite). Cliquez sur un mot de la réponse pour l'enlever.</p>
+                <div id="possibilities"></div>
+            </div>
+
+            <button id="check">Vérifier la réponse</button>
+            <button id="next">Question suivante</button>
+            <button id="again">Recommencer</button>
+            <button id="other">Autre test</button>
+        </section>
+    </main>
+
+    <footer>
+        Auteur : 54027 - BRICAR Dylan
+    </footer>
+    <script>$(document).ready(main);</script>
+</body>
+
+</html>

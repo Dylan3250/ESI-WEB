@@ -1,0 +1,140 @@
+/* --------------------------
+------ FONTS
+-------------------------- */
+
+@font-face {
+    font-family: 'FontAwesome';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/fonts/FontAwesome/fontawesome-webfont.eot');
+    src: url('/fonts/FontAwesome/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/FontAwesome/fontawesome-webfont.woff') format('woff'), url('../fonts/FontAwesome/fontawesome-webfont.woff2') format('woff2'), url('../fonts/FontAwesome/fontawesome-webfont.ttf') format('truetype'), url('../fonts/FontAwesome/fontawesome-webfont.svg#svgFontAwesome/fontawesome-webfont') format('svg');
+}
+
+/* --------------------------
+------ ICONS
+-------------------------- */
+
+.icon {
+    display: inline-block;
+    font-family: 'FontAwesome', Arial;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin-right: 4px;
+}
+
+.heart:before {
+    content: '\f21e';
+}
+
+/* --------------------------
+------ GENERAL
+-------------------------- */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003440;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1, h3 {
+    margin: 0;
+}
+
+h3 {
+    padding: 10px 0;
+}
+
+/* --------------------------
+------ HEADER
+-------------------------- */
+
+header {
+    color: white;
+    background-color: #00667f;
+    box-shadow: #004c5f 0 1px 3px;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+/* --------------------------
+------ ELEMENTS OF THE INFOBAR
+-------------------------- */
+
+#infobar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 30px;
+    padding: 0 10px;
+    min-height: 1.3em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#life {
+    color: red;
+}
+
+#level {
+    text-align: center;
+}
+
+#score {
+    text-align: right;
+}
+
+/* --------------------------
+------ ELEMENTS OF THE SCENE
+-------------------------- */
+
+:root {
+    --scene-width: 960px;
+    --scene-height: 600px;
+}
+
+#scene {
+    border: 3px solid #d6dee1;
+    box-shadow: #d6dee1 2px 2px 4px;
+    width: var(--scene-width);
+    height: var(--scene-height);
+    margin-bottom: 50px;
+    position: relative;
+    cursor: none;
+}
+
+#paddle {
+    position: absolute;
+    background-color: #00667f;
+}
+
+#ball {
+    position: absolute;
+    background-color: #00667f;
+    border-radius: 100%;
+}
+
+.brick {
+    position: absolute;
+    background-color: #449fb5;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+#message {
+    position: absolute;
+    width: 100%;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    top: calc(var(--scene-height) / 2);
+    color: #3b565d;
+}

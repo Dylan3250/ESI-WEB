@@ -1,0 +1,31 @@
+/* -------------------------- 
+------ GAMES BOX
+-------------------------- */
+
+#game {
+    margin-bottom: 35px;
+}
+
+#game button {
+    margin-right: 0.5em;
+}
+
+#answer {
+    background-color: #FFF;
+    border: 1px solid #d6dee1;
+    padding: 10px;
+    min-height: 5em;
+    padding-bottom: 30px;
+}
+
+#check, #other, #again {
+    background: linear-gradient(0deg, #f3f3f3, white);
+}
+
+#check:hover, #other:hover, #again:hover {
+    background: linear-gradient(0deg, #e9e8e8, white);
+}
+
+#check:active, #other:active, #again:active {
+    background: linear-gradient(0deg, #dddddd, white);
+}

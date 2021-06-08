@@ -1,0 +1,144 @@
+/* -------------------------- 
+------ GENERAL
+-------------------------- */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003440;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    width: 80%;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 1.2em;
+    margin-top: 0.3em;
+}
+
+h3 {
+    padding: 10px 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* -------------------------- 
+------ HEADER
+-------------------------- */
+
+header {
+    color: white;
+    background-color: #00667f;
+    box-shadow: #004c5f 0 1px 3px;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+/* -------------------------- 
+------ SECTION
+-------------------------- */
+
+section {
+    background-color: #eef7fa;
+    border: 1px solid #d6dee1;
+    box-shadow: #d6dee1 2px 2px 4px;
+    margin: 30px 0;
+    padding: 10px;
+}
+
+/* -------------------------- 
+------ FORM
+-------------------------- */
+
+select, button {
+    height: 2.25em;
+    color: #003440;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ced4da;
+    font-size: 0.9em;
+    outline: 0;
+}
+
+select {
+    height: 2.3em;
+}
+
+button {
+    border-radius: 5px;
+    width: auto;
+    padding: 0 20px;
+    background: linear-gradient(0deg, #b5d6df, white);
+}
+
+button:hover {
+    background: linear-gradient(0deg, #accdd5, white);
+    cursor: pointer;
+}
+
+button:active {
+    background: linear-gradient(0deg, #9fbcc4, white);
+}
+
+button:disabled {
+    background: #dcdcdc;
+    cursor: not-allowed;
+}
+
+/* -------------------------- 
+------ ALERTS
+-------------------------- */
+
+.hidden {
+    display: none;
+}
+
+#alert, #end {
+    padding: 12px 8px;
+    margin-top: 10px;
+    color: rgb(255, 243, 243);
+}
+
+.error {
+    background-color: rgb(255, 147, 147);
+    border: 1px solid rgb(215, 130, 130);
+}
+
+.success {
+    background-color: rgb(129, 178, 135);
+    border: 1px solid rgb(87, 120, 103);
+}
+
+.info {
+    background-color: rgba(101, 158, 167, 1);
+    border: rgb(46, 71, 74);
+}
+
+/* -------------------------- 
+------ FOOTER
+-------------------------- */
+
+footer {
+    background-color: white;
+    text-align: center;
+    border: 1px solid #d6dee1;
+    box-shadow: #d6dee1 2px 2px 4px;
+    padding: 10px 25px;
+}
