@@ -1,0 +1,27 @@
+// ------------------------------
+// GENERAL CONFIGURATIONS
+// ------------------------------
+
+form {
+    text-align: center;
+
+    label {
+        cursor: pointer;
+    }
+
+    input[type=text] {
+        padding: 5px;
+        border: 2px solid #ccc;
+        width: 200px;
+        border-radius: 5px;
+        margin-top: .2em;
+    }
+
+    input[type=text]:focus {
+        border-color: #333;
+    }
+
+    button {
+        min-width: 300px;
+    }
+}

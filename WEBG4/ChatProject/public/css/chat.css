@@ -1,0 +1,85 @@
+main h2 {
+  background: #f7f7f7;
+  font-size: 1.2em;
+  padding: 0.7em;
+  text-align: center;
+}
+
+main #chat .alert {
+  display: none;
+}
+main #chat .read {
+  display: flex;
+  -moz-column-gap: 1em;
+       column-gap: 1em;
+  background: #f7f7f7;
+  padding: 1em;
+}
+main #chat .read .lateral {
+  min-width: 100px;
+  text-align: center;
+}
+main #chat .read .lateral .channel {
+  transition: background 0.2s;
+  padding: 0.5em;
+  margin: 0.2em;
+  background: #eaeaea;
+  font-weight: bold;
+  color: #001e47;
+}
+main #chat .read .lateral .channel:hover {
+  background: #dedede;
+}
+main #chat .read .lateral .channel:active {
+  background: #d1d1d1;
+}
+main #chat .read .lateral .channel.active {
+  background: #c4c4c4;
+}
+main #chat .read .lateral .channel.active:hover {
+  background: #b7b7b7;
+}
+main #chat .read .lateral .channel.active:active {
+  background: #ababab;
+}
+main #chat .read .messages {
+  width: 100%;
+}
+main #chat .read .messages .msg {
+  padding: 1em;
+  margin: 0.2em;
+}
+main #chat .read .messages .msg:nth-child(odd) {
+  background: #efefef;
+}
+main #chat .read .messages .msg:nth-child(even) {
+  background: #e3e3e3;
+}
+main #chat .read .messages .msg-info {
+  border-bottom: 1px solid #bfbfbf;
+  font-weight: bold;
+  padding-bottom: 0.7em;
+}
+main #chat .read .messages .msg-text {
+  padding-top: 0.7em;
+}
+main #chat .write {
+  margin-top: 1em;
+}
+main #chat .write form {
+  display: flex;
+}
+main #chat .write form textarea {
+  width: 100%;
+  height: 200px;
+  outline: none;
+  resize: none;
+  overflow-x: hidden;
+  padding: 1em;
+  border: 0;
+  font-family: "Arial", sans-serif;
+}
+main #chat .write form button {
+  border-radius: 0;
+  margin-top: 0;
+}

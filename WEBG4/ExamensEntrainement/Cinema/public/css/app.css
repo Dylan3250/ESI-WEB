@@ -1,0 +1,35 @@
+td, tr, th {
+    padding: 1em;
+    border: 1px solid black;
+}
+
+th {
+    background: cornflowerblue;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    display: inline;
+}
+
+tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#asideFilm{
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+    border: 1px solid black;
+    padding: .7em;
+    margin-left: .5em;
+}
+
+.titleFilm {
+    cursor: pointer;
+}
+
+#asideTitle, #asideSynopsis, #asideRating {
+    padding-bottom: .5em;
+}

@@ -1,0 +1,17 @@
+#pae {
+    margin-top: 1em;
+}
+
+#pae td {
+    padding: .6em;
+    border: 1px solid black;
+}
+
+#pae th {
+    padding: .6em;
+    background: cadetblue;
+}
+
+#pae tr {
+    cursor: pointer;
+}

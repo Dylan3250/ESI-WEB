@@ -1,0 +1,16 @@
+.channel {
+  text-align: center;
+  margin: 1em auto;
+  width: 70%;
+  transition: background 0.2s;
+  padding: 0.5em;
+  background: white;
+  font-weight: bold;
+  color: #001e47;
+}
+.channel:hover {
+  background: #e6e6e6;
+}
+.channel:active {
+  background: #d9d9d9;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "exemple01/exemple01",
+  "description": "",
+  "require": {
+    "symfony/var-dumper": "^5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "G54027\\": "classes"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+// ------------------------------
+// CHANNEL CONFIGURATIONS
+// ------------------------------
+
+.channel {
+    text-align: center;
+    margin: 1em auto;
+    width: 70%;
+    transition: background .2s;
+    padding: .5em;
+    background: white;
+    font-weight: bold;
+    color: #001e47;
+
+    &:hover {
+        background: darken(white, 10);
+    }
+
+    &:active {
+        background: darken(white, 15);
+    }
+}

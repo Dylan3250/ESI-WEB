@@ -1,0 +1,78 @@
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    margin: 0 1em;
+}
+
+/* HEADER */
+header {
+    background: #4f7ee2;
+    padding: 1em;
+}
+
+header img {
+    width: 100px;
+}
+
+header h1 {
+    display: inline-block;
+    color: white;
+}
+
+header nav a {
+    padding: 1em;
+    color: white;
+}
+
+/* FOOTER */
+footer {
+    background: #a0aec0;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+/* TABLE */
+td, tr, th {
+    padding: 1em;
+    border: 1px solid black;
+}
+
+th {
+    background: cornflowerblue;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    display: inline;
+}
+
+tr:nth-child(odd) {
+    background: rgba(0, 0, 0, .1);
+}
+
+/* REPOSITORY PAGE */
+.titleRepo {
+    cursor: pointer;
+}
+
+#infoDepot {
+    background: #b7b7b8;
+}
+
+#infoDepot h3 {
+    padding: .2em;
+}
+
+#infoDepot span {
+    padding: 1em;
+}
+
+#infoDepot ul {
+    margin: 1em;
+    padding-bottom: 1em;
+}

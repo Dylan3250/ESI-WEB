@@ -1,0 +1,112 @@
+// ------------------------------
+// GENERAL CONFIGURATIONS
+// ------------------------------
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    color: #002128;
+    background: #eff6fc;
+}
+
+a {
+    text-decoration: none !important;
+    color: #1e90ff;
+    transition: color .2s;
+
+    &:hover {
+        color: darken(#1e90ff, 10);
+    }
+
+    &:after {
+        color: darken(#1e90ff, 20);
+    }
+}
+
+button {
+    margin-top: 1em;
+    padding: 1em;
+    background: #90e3f1;
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background .2s;
+
+    &:hover {
+        background: darken(#90e3f1, 25);
+    }
+
+    &:active {
+        background: darken(#90e3f1, 35);
+    }
+}
+
+.alert {
+    width: 80%;
+    text-align: center;
+    margin: 1em auto;
+    padding: 1em;
+
+    p {
+        margin: 0;
+    }
+}
+
+.alert.error {
+    background: #ffbaba;
+    border: 1px solid #f78383;
+}
+
+// ------------------------------
+// HEADER CONFIGURATIONS
+// ------------------------------
+
+header {
+    background: #078499;
+    text-align: center;
+    color: white;
+    padding: 1em;
+
+    a {
+        color: white !important;
+    }
+
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 1em;
+    }
+}
+
+// ------------------------------
+// MAIN CONFIGURATIONS
+// ------------------------------
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    background: #d8f7fd;
+}
+
+// ------------------------------
+// RESPONSIVE
+// ------------------------------
+
+@media only screen and (max-width: 825px) {
+    header button {
+        position: relative;
+        min-width: 100px;
+        width: 30%;
+    }
+
+    main {
+        width: 100%;
+    }
+}

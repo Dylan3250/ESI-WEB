@@ -1,0 +1,119 @@
+// ------------------------------
+// GENERAL CONFIGURATIONS
+// ------------------------------
+
+main h2 {
+    background: #f7f7f7;
+    font-size: 1.2em;
+    padding: .7em;
+    text-align: center;
+}
+
+// ------------------------------
+// CHAT CONFIGURATIONS
+// ------------------------------
+
+main #chat {
+    .alert {
+        display: none;
+    }
+
+    // ------------------------------
+    // MESSAGES AND CHANNELS
+    // ------------------------------
+    .read {
+        display: flex;
+        column-gap: 1em;
+        background: #f7f7f7;
+        padding: 1em;
+
+        .lateral {
+            min-width: 100px;
+            text-align: center;
+
+            .channel {
+                transition: background .2s;
+                padding: .5em;
+                margin: .2em;
+                background: darken(#f7f7f7, 5);
+                font-weight: bold;
+                color: #001e47;
+
+                &:hover {
+                    background: darken(#f7f7f7, 10);
+                }
+
+                &:active {
+                    background: darken(#f7f7f7, 15);
+                }
+            }
+
+            .channel.active {
+                background: darken(#f7f7f7, 20);
+
+                &:hover {
+                    background: darken(#f7f7f7, 25);
+                }
+
+                &:active {
+                    background: darken(#f7f7f7, 30);
+                }
+            }
+        }
+
+        .messages {
+            width: 100%;
+
+            .msg {
+                padding: 1em;
+                margin: .2em;
+            }
+
+            .msg:nth-child(odd) {
+                background: darken(#f7f7f7, 3);
+            }
+
+            .msg:nth-child(even) {
+                background: darken(#f7f7f7, 8);
+            }
+
+            .msg-info {
+                border-bottom: 1px solid #bfbfbf;
+                font-weight: bold;
+                padding-bottom: .7em;
+            }
+
+            .msg-text {
+                padding-top: .7em;
+            }
+        }
+    }
+
+    // ------------------------------
+    // TEXTAREA AND RESPONSE
+    // ------------------------------
+
+    .write {
+        margin-top: 1em;
+
+        form {
+            display: flex;
+
+            textarea {
+                width: 100%;
+                height: 200px;
+                outline: none;
+                resize: none;
+                overflow-x: hidden;
+                padding: 1em;
+                border: 0;
+                font-family: "Arial", sans-serif;
+            }
+
+            button {
+                border-radius: 0;
+                margin-top: 0;
+            }
+        }
+    }
+}
