@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <title>Courses - PAE</title>
+</head>
+
+<body>
+    <header>
+        <aside><img th:src="@{/img/logo.jpg}" alt="logo"></aside>
+        <h1>Programme annuel des étudiants</h1>
+        <h3>HE2B-ESI / WEBG5 / MCD / 2019 - 2020</h3>
+        <div style="clear: both;" />
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/courses">Cours</a>
+            <a href="/students">Etudiants</a>
+        </nav>
+
+        <span th:text="${#temporals.format(#temporals.createNow(), 'SHORT')}">temporal</span>
+
+        <select name="lang" onchange="location = this.value;">
+            <option value="">Default</option>
+            <option value="?lang=fr">Français</option>
+            <option value="?lang=en">English</option>
+        </select>
+
+        <h1 th:text="#{greetings}">Welcome</h1>
+    </header>
+
+    <main layout:fragment="content">
+        Ce contenu sera remplacé par le vrai.
+    </main>
+</body>
+
+</html>

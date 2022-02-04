@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+
+<head>
+    <title th:text="|WEBG5 - ${artist.name}|">WEBG5 - Un artiste</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h1 th:text="${artist.name}"></h1>
+        <hr>
+
+        <div class="artist_img_container">
+            <img th:src="@{|/img/artists/${artist.login}.jpg|}" th:alt="${artist.name}">
+        </div>
+
+        <table th:unless="${#lists.isEmpty(artist.tracks)}">
+            <tr>
+                <th>Titre</th>
+                <th>Stream</th>
+                <th>Mise à jour</th>
+            </tr>
+            <tr th:each="oneTrack: ${artist.tracks}">
+                <td th:text="${oneTrack.title}">Titre</td>
+                <td><span th:text="${#numbers.formatDecimal(oneTrack.stream, 0, 'POINT', 0, 'POINT')}">10.00</span></td>
+                <td>
+                    <form th:action="@{|/artist/update/${oneTrack.artist.login}/${oneTrack.id}|}" th:object="${track}" method="POST">
+                        <input type="number" min="1" th:field="*{stream}" th:errorclass="errorField" />
+                        <span th:errors="*{stream}" class="errorMsg">Erreur stream</span>
+                        <button>Envoyer</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <div class="alert info" th:if="${#lists.isEmpty(artist.tracks)}">Aucune chanson disponible.</div>
+    </main>
+</body>
+
+</html>

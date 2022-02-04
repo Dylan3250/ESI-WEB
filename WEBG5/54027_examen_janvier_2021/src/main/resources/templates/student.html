@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+
+<head>
+    <title>WEBG5 - Etudiant</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h1>Avancement de <span th:text="${student.name}">Nom</span></h1>
+        <hr>
+
+        <table>
+            <tr>
+                <th>Tâche</th>
+                <th>Fait ?</th>
+            </tr>
+
+            <tr th:each="task : ${tasks}">
+                <td th:text="${task.description}">Description</td>
+                <td>
+                    <input type="checkbox" th:value="${task.id}" th:checked="${#lists.contains(task.students, student)}">
+                </td>
+                <td>
+                    <form th:unless="${#lists.contains(task.students, student)}" th:action="|/student/doneTask|" method="POST">
+                        <input type="hidden" name="taskId" th:value="${task.id}">
+                        <input type="hidden" name="studentId" th:value="${student.number}">
+                        <button>Fini</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>

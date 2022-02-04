@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+
+<head>
+    <title>WEBG5 - Dépot</title>
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/jqueryUI.min.js}"></script>
+
+    <script th:inline="javascript">
+        $(document).ready(function() {
+            $.ajax({
+                url: '/api/depot/[[${repositoryId}]]',
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    $("#depot_name").text(data.name)
+                    $("#member_name").text(data.member.name)
+                    $("#member_login").text(data.member.login)
+
+                    data.commits.forEach(item => {
+                        var dateFormat = $.datepicker.formatDate('MM dd, yy', new Date(item.date));
+
+                        $("table")
+                            .append($('<tr>')
+                                .append($('<td>').text(dateFormat))
+                                .append($('<td>').text(item.message))
+                            );
+                    })
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h1>Information sur " <span id="depot_name"></span> "</h1>
+        <hr />
+
+        <div class="alert info">Créé par <span id="member_name"></span> (<span id="member_login"></span>)</div>
+
+        <h1>Information sur les commits !</h1>
+        <hr />
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Message</th>
+            </tr>
+        </table>
+
+        <h1>Ajouter un commit</h1>
+        <hr />
+
+        <form action="/commit/add" method="POST">
+            <input type="hidden" name="repositoryId" th:value="${repositoryId}">
+            <input type="text" name="message" placeholder="Message de commit">
+            <button>Ajouter le commit</button>
+        </form>
+    </main>
+</body>
+
+</html>

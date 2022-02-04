@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAE - Courses</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <aside><img src="img/logo.jpg" alt="logo"></aside>
+        <h1>Programme annuel des étudiants</h1>
+        <h3>HE2B-ESI / WEBG5 / MCD / 2019 - 2020</h3>
+        <div style="clear: both;" />
+        </div>
+    </header>
+
+    <main>
+        <h2>Liste des cours</h2>
+        <div id="app">
+            <select @change="onChange($event)">
+                <option v-for="option in options" :value="option.id">{{ option.id }} - {{ option.title }}</option>
+            </select>
+
+            <ul v-if="subOptions.id">
+                <li>Sigle : {{ subOptions.id }}</li>
+                <li>Titre : {{ subOptions.title }}</li>
+                <li>Crédit : {{ subOptions.credits }}</li>
+            </ul>
+        </div>
+
+        <script>
+            let app = new Vue({
+                el: '#app',
+                data: {
+                    options: [],
+                    subOptions: []
+                },
+                methods: {
+                    pullCourses() {
+                        $.ajax({
+                            url: "http://localhost:8080/api/courses",
+                            success: results => {
+                                this.options = results
+                            }
+                        });
+                    },
+                    onChange(event) {
+                        if (event.target.value == "default") {
+                            return
+                        }
+                        $.ajax({
+                            url: "http://localhost:8080/api/courses/" + event.target.value,
+                            success: results => this.subOptions = results
+                        });
+                    }
+                },
+                mounted() {
+                    this.pullCourses()
+                },
+            })
+        </script>
+    </main>
+</body>
+
+</html>

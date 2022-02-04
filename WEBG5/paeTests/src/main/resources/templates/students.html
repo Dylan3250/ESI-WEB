@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>PAE - Students</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h2>Liste des étudiants</h2>
+        <form th:action="@{/students/search}" method="post">
+            <input type="text" placeholder="Nom" name="name" />
+            <br>
+            <button>Envoyer</button>
+        </form>
+
+        <div th:unless="${#lists.isEmpty(students)}">
+            <table>
+                <tr>
+                    <th>Matricule</th>
+                    <th>Nom</th>
+                    <th>Genre</th>
+                    <th>Section</th>
+                </tr>
+                <tr th:each="student : ${students}">
+                    <td><a th:href="@{/students/details/{id}(id=${student.matricule})}" th:text="${student.matricule}">Matricule</a></td>
+                    <td th:text="${student.name}">Nom</td>
+                    <td th:text="${student.genre}">Genre</td>
+                    <td th:text="${student.section}">Section</td>
+
+                </tr>
+            </table>
+        </div>
+        <div th:if="${#lists.isEmpty(students)}">Aucun étudiant de défini pour l'instant</div>
+
+        <h2>Ajouter un étudiant</h2>
+
+        <form th:action="@{/students/add}" th:object="${student}" method="post">
+            <input type="text" placeholder="Nom" th:field="*{name}" th:errorclass="errorField" />
+            <span th:errors="*{name}" class="errorMsg">erreur nom</span><br><br>
+
+            <label>
+                <input type="radio" th:field="*{section}" th:value="INDUSTRIEL" checked>Industriel
+            </label>
+            <label>
+                <input type="radio" th:field="*{section}" th:value="RESEAU">Réseau
+            </label>
+            <label>
+                <input type="radio" th:field="*{section}" th:value="GESTION">Gestion
+            </label>
+            <span th:errors="*{section}" class="errorMsg">erreur section</span><br>
+
+            <br>
+            <label>
+                <input type="radio" th:field="*{genre}" th:value="M" checked="checked">Homme
+            </label>
+            <label>
+                <input type="radio" th:field="*{genre}" th:value="F">Femme
+            </label>
+            <span th:errors="*{genre}" class="errorMsg">erreur section</span><br>
+
+            <br>
+            <button>Envoyer</button>
+        </form>
+    </main>
+</body>
+
+</html>

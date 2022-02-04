@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+
+<head>
+    <title>WEBG5 - Accueil</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h1>Tableau de bord</h1>
+        <hr>
+
+        <form method="POST" th:action="@{/login}">
+            <input type="text" placeholder="Login" name="username">
+            <input type="password" placeholder="Mot de passe" name="password">
+            <button type="submit">Login</button>
+        </form>
+    </main>
+</body>
+
+</html>

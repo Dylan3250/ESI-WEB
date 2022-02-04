@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+
+<head>
+    <title>WEBG5 - Accueil</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h1>Tableau de bord</h1>
+        <hr>
+
+        <table th:unless="${#lists.isEmpty(students)}">
+            <tr>
+                <th></th>
+                <th th:each="task: ${tasks}"><span th:text="${task.description}">Tâche</span></th>
+            </tr>
+
+            <tr th:each="student: ${students}">
+                <td>
+                    <a th:href="|/student/${student.number}|" th:text="${student.name}">Nom</a>
+                </td>
+
+                <div th:each="task: ${tasks}">
+                    <td>
+                        <input type="checkbox" th:value="${task.id}" th:checked="${#lists.contains(student.tasks, task)}">
+                    </td>
+                </div>
+            </tr>
+        </table>
+        <p th:if="${#lists.isEmpty(students)}"> Il n'y a aucun utilisateur actuellement !</p>
+    </main>
+</body>
+
+</html>

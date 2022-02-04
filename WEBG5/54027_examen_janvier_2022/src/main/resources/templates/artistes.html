@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+
+<head>
+    <title>WEBG5 - Liste des artistes</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h1>Classement des artistes</h1>
+        <hr>
+
+        <table th:unless="${#lists.isEmpty(artists)}">
+            <tr>
+                <th>Nom</th>
+                <th>Nombre de chansons</th>
+            </tr>
+
+            <tr th:each="artist: ${artists}">
+                <td><a th:href="|/artist/${artist.login}|" th:text="${artist.name}">Nom</a></td>
+                <td th:text="${#lists.size(artist.tracks)}">Nombre de chanson</td>
+            </tr>
+        </table>
+        <div class="alert info" th:if="${#lists.isEmpty(artists)}">Il n'y a pas encore d'artistes.</div>
+    </main>
+</body>
+
+</html>

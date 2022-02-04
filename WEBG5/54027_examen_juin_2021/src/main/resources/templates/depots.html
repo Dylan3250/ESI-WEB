@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>WEBG5 - Dépots</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h1>Liste des dépots !</h1>
+        <hr/>
+
+        <table th:unless="${#lists.isEmpty(repositories)}">
+            <tr>
+                <th>Nom</th>
+                <th>Membre du dépot</th>
+                <th>Nombre de commit</th>
+            </tr>
+
+            <tr th:each="repository: ${repositories}">
+                <td><a th:href="|/depot/${repository.id}|" th:text="${repository.name}">Nom</a></td>
+                <td th:text="${repository.member.name}">Membre</td>
+                <td th:text="${#lists.size(repository.commits)}">Nombre de commit</td>
+            </tr>
+        </table>
+        <p th:if="${#lists.isEmpty(repositories)}"> Il n'y a aucun dépots actuellement !</p>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>PAE - Accueil</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        Bienvenue <span th:text="${username}" style="color: orange; font-weight: bold;">inconnu</span> sur le site de gestion du programme des étudiants
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/home/Dylan">Accueil avec le pseudo Dylan</a></li>
+            <li><a href="/courses">Liste des courses</a></li>
+            <li><a href="/courses/details/INT1}">Details de INT1</a></li>
+            <li><a href="/api/courses/template">API REST avec le template Spring</a></li>
+            <li><a href="/api/courses">API REST utilisé avec du JS</a></li>
+            <li><a href="/courses/rest/template">REST avec le template Spring</a></li>
+            <li><a href="/courses/rest">REST utilisé avec du JS</a></li>
+        </ul>
+    </main>
+</body>
+
+</html>

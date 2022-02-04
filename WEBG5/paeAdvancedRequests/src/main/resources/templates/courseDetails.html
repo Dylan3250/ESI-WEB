@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>PAE - Detail</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h2>Detail du cours</h2>
+        <span th:text="${course.id}">Id</span>
+        <span th:text="${course.title}">Titre</span>
+        <span th:text="${course.credits}">Credits</span>
+
+        <form th:action="@{/courses/addStudent}" method="post">
+            <input type="text" name="matricule" placeholder="Matricule" />
+            <input type="hidden" name="courseId" th:value="${course.id}" />
+            <br>
+            <button>Ajouter</button>
+        </form>
+    </main>
+</body>
+
+</html>

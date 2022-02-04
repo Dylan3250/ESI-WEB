@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <title>WEBG5 - Examen</title>
+</head>
+
+<body>
+    <header>
+        <h1>WEBG5 - Examen 2022</h1>
+        <h3>Dylan BRICAR - 54027</h3>
+        <nav sec:authorize="isAuthenticated()">
+            <a href="/">Accueil</a>
+            <a href="/board">Tableau de bord</a>
+            <a href="">
+                <form method="POST" th:action="@{/logout}">
+                    <button type="submit">Deconnexion <span sec:authentication="name">Bob</span></button>
+                </form>
+            </a>
+        </nav>
+
+        <nav sec:authorize="isAnonymous()">
+            <a href="">
+                <form method="POST" th:action="@{/login}">
+                    <button type="submit">Se connecter</button>
+                </form>
+            </a>
+        </nav>
+    </header>
+
+    <main layout:fragment="content">
+        Ce contenu sera remplacé par le vrai.
+    </main>
+</body>
+
+</html>

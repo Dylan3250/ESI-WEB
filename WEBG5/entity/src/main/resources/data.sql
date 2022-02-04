@@ -1,0 +1,1 @@
+insert into User (login, name) values ('JLC', 'Lechien'), ('MCD', 'Codutti');

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>PAE - Courses</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h2>Liste des cours</h2>
+        <table>
+            <tr>
+                <th>Sigle</th>
+                <th>Titre</th>
+                <th>ECTS</th>
+            </tr>
+
+        </table>
+        </div>
+
+        <h2>Ajouter un cours</h2>
+
+        <form th:action="@{/courses/add}" th:object="${course}" method="post">
+            <input type="text" placeholder="Matricule" th:field="*{id}" th:errorclass="errorField" />
+            <span th:errors="*{id}" class="errorMsg">erreur id</span><br><br>
+
+            <input type="text" placeholder="Ttitre" th:field="*{title}" th:errorclass="errorField" />
+            <span th:errors="*{title}" class="errorMsg">erreur title</span><br><br>
+
+            <input type="number" th:field="*{credits}" th:errorclass="errorField" />
+            <span th:errors="*{credits}" class="errorMsg">erreur credits</span><br>
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    url: '/api/courses',
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        data.forEach(item => {
+                            $("table")
+                                .append($('<tr>')
+                                    .append($('<td>').append($('<a>').attr("href", "/details/" + item.id).text(item.id)))
+                                    .append($('<td>').text(item.title))
+                                    .append($('<td>').text(item.credits))
+                                );
+                        });
+                    }
+                })
+            })
+        </script>
+    </main>
+</body>
+
+</html>

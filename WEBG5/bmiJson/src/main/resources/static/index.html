@@ -1,0 +1,41 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#compute").click(
+                function () {
+                    var poids = $("#poids").val();
+                    var taille = $("#taille").val();
+                    var genre = $("input[name=genre]:checked").val();
+                    $.ajax({
+                        url: "http://localhost:8080/api/bmi?"
+                            + "weight=" + poids
+                            + "&height=" + taille
+                            + "&gender=" + genre
+                    }).then(function (data) {
+                        var bmi = data.bmi;
+                        var corpulence = data.corpulence;
+                        $("#imc").text(bmi);
+                        $("#corpulence").text(corpulence);
+                    });
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Calcul IMC</h1>
+    <p>Entrez votre poids et votre taille.</p>
+    <input type="radio" name="genre" value="man" checked> Homme
+    <input type="radio" name="genre" value="woman"> Femme<br />
+    Votre taille (en cm) : <input id="taille" value="177" size="10" /><br />
+    Votre poids (en kg) : <input id="poids" value="69" size="10" /><br />
+    <input id="compute" type="button" value="Calculer" /><br /><br />
+    Votre IMC = <span id="imc"></span><br />
+    Votre corpulence = <span id="corpulence"></span>
+</body>
+
+</html>

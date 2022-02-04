@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <title>PAE - Student Detail</title>
+</head>
+
+<body>
+    <main layout:fragment="content">
+        <h2>Detail d'un étudiant</h2>
+        <span th:text="${student.matricule}">Matricule</span>
+        <span th:text="${student.name}">Name</span>
+        <span th:text="${student.genre}">Genre</span>
+        <span th:text="${student.section}">Section</span>
+
+<div th:text="${student.likedCourses}"></div>
+
+        <table>
+            <tr th:each="likedCourse : ${student.likedCourses}">
+                <td><a th:href="@{/courses/details/{id}(id=${likedCourse.id})}" th:text="${likedCourse.id}">Title</a>
+                </td>
+                <td th:text="${likedCourse.title}">Title</td>
+                <td th:text="${likedCourse.credits}">ECTS</td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>
